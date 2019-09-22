@@ -1,0 +1,51 @@
+*
+A school has following rules for grading system:
+a. Below 25 - F
+b. 25 to 45 - E
+c. 45 to 50 - D
+d. 50 to 60 - C
+e. 60 to 80 - B
+f. Above 80 - A
+Ask user to enter marks and print the corresponding grade.
+ */
+ 
+import java.util.Scanner;
+
+public class Grade {
+    public static void main(String args[]){
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter Your Marks: ");
+        char m;
+        double marks = in.nextDouble();
+        if( marks < 25 && marks >= 0)
+            m = 'F';
+        else if(marks >= 25 && marks < 45)
+            m = 'E';
+        else if(marks >= 45 && marks < 50)
+            m = 'D';
+        else if(marks >= 50 && marks < 60)
+            m = 'C';
+        else if(marks >= 60  &&  marks < 80)
+            m = 'B';
+        else if(marks >=80 && marks <=100)
+            m= 'A';
+        else
+            m='G';
+
+        switch(m)
+        {
+            case 'A' : System.out.print("You got "+m+" Excellent! Keep it up.");
+                        break;
+            case 'B' :
+            case 'C' :  System.out.print("You got "+m+" Good job! Still scope for improvement.");
+                        break;
+            case 'D' :
+            case 'E' :
+            case 'F' :   System.out.print("You got "+m+" Need to work Hard! ");
+                        break;
+            default :     System.out.print("Incorrect Marks !!! ");
+        }
+
+    }
+
+}
